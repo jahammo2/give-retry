@@ -35,7 +35,7 @@ function checkAuth(store) {
 
 function register(credentials) {
   return apiService
-    .post('/auth', credentials)
+    .post('/user/auth', credentials)
     .then(({ data }) => {
       return {
         email: data.data.email,
@@ -91,7 +91,7 @@ function resetPassword(params) {
 
 function signIn(credentials) {
   return apiService
-    .post('/auth/sign_in', credentials)
+    .post('/user/auth/sign_in', credentials)
     .then(({ data }) => {
       return {
         email: data.data.email,
@@ -113,7 +113,7 @@ function signIn(credentials) {
 
 function signOut() {
   return apiService
-    .delete('/auth/sign_out');
+    .delete('/user/auth/sign_out');
 }
 
 export default {

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import Greeting from './Greeting';
+import Header from './Header';
 import NameTaker from './NameTaker';
 import SignOut from '../../modules/authentication/containers/SignOut';
 
@@ -14,6 +15,7 @@ const propTypes = {
 function App({ name, onSubmit, router, tokenInfo }) {
   return (
     <div>
+      <Header />
       {Object.keys(tokenInfo).length > 0 &&
         <SignOut router={router} />}
       <Greeting name={name} />

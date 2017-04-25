@@ -12,18 +12,24 @@
 /* 2_elements ([name] tagname selectors) body, h1, button */
 @import "2_elements/body";
 @import "2_elements/buttons";
-@import "2_elements/forms";
 @import "2_elements/lists";
 @import "2_elements/tables";
 @import "2_elements/typography";
 
 /* 3_components (.c-[name] BEM class selectors) buttons, well, links, logo */
+@import "3_components/authenticationHeading";
+@import "3_components/button";
+@import "3_components/card";
+@import "3_components/formField";
 @import "3_components/greeting";
+@import "3_components/modal";
+@import "3_components/nav";
 /* When in doubt, it goes here */
 
 /* 4_layout (.l-[name] BEM class selectors) header, footer, grid, sections */
 
 /* 5_helpers (.h-[name] class selectors) display, headings, typography */
+@import "5_utilities/colors";
 
 /* 6_vendor_overrides */
 

@@ -1,5 +1,4 @@
 import React, {
-  cloneElement,
   Component,
   PropTypes
 } from 'react';
@@ -37,10 +36,15 @@ class Register extends Component {
 
       return memo;
     }, {});
-    values.confirm_success_url = `${window.location.origin}/registration-confirmed`;
+    const params = {
+      data: {
+        attributes: values
+      },
+      confirm_success_url: `${window.location.origin}/registration-confirmed`
+    };
 
     return this.props.actions.authentication
-      .register(values)
+      .register(params)
       .then(() => this.transitionToNextPage());
   }
 
@@ -60,21 +64,18 @@ class Register extends Component {
   render() {
     return (
       <form ref={(form) => { this.registerForm = form; }} onSubmit={this.handleSubmit}>
-        <label htmlFor="email">
-          Email
+        <div className="form-field">
+          <div className="form-field__title">Email</div>
           <input name="email" type="text" />
-        </label>
-        <label htmlFor="password">
-          Password
+        </div>
+        <div className="form-field">
+          <div className="form-field__title">Password</div>
           <input name="password" type="password" />
-        </label>
-        <label htmlFor="password_confirmation">
-          Password Confirmation
-          <input name="password_confirmation" type="password" />
-        </label>
-        {this.props.children &&
-          cloneElement(this.props.children, this.props)}
-        <input type="submit" value="Submit" />
+        </div>
+        {this.props.children}
+        <div className="c-button__container">
+          <input className="c-button c-button--rounded c-button--brand u-bg-teal" type="submit" value="SUBMIT" />
+        </div>
       </form>
     );
   }

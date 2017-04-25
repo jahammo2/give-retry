@@ -1,0 +1,18 @@
+input.c-button {
+  display: block;
+  font-size: var(--font-size-lg);
+  margin: var(--spacing-lg) auto;
+  padding: var(--spacing-med) var(--spacing-lg);
+
+  &--brand {
+    background-color: var(--color-teal);
+  }
+}
+
+.c-button {
+  box-sizing: border-box;
+
+  &__container {
+    width: 100%;
+  }
+}

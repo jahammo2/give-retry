@@ -19,21 +19,6 @@ config.devServer = {
 };
 config.devtool = 'inline-source-map';
 
-config.module.rules = config.module.rules.concat([{
-  enforce: 'pre',
-  test: /\.jsx?$/,
-  exclude: /node_modules/,
-  use: 'eslint-loader'
-}]);
-
 config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
-config.plugins.unshift(new webpack.LoaderOptionsPlugin({
-  options: {
-    eslint: {
-      emitWarning: true,
-      formatter: require('eslint-friendly-formatter')
-    }
-  }
-}));
 
 module.exports = config;

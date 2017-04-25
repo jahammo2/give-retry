@@ -12,6 +12,8 @@
   --color-light-grey: #d8d8d8;
   --color-med-grey: #666;
   --color-dark-grey: #4a4a4a;
+  --color-grey-darker: #333;
+  --color-teal: #1aaa98;
   --helvetica-stack: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   --font-family-default: var(--helvetica-stack);
   --font-family-heading: var(--helvetica-stack);
@@ -25,6 +27,7 @@
   --font-size-xs: 0.625rem;
   --font-weight-default: var(--font-weight-normal);
   --font-weight-bold: 700;
+  --font-weight-semibold: 600;
   --font-weight-normal: 400;
   --font-weight-light: 100;
   --letter-spacing-med: 0.125em;

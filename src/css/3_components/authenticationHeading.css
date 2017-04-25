@@ -1,0 +1,5 @@
+h2.c-authentication-heading {
+  color: var(--color-dark-grey);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+}
