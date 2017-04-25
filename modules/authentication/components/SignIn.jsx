@@ -3,9 +3,6 @@ import React, {
   Component,
   PropTypes
 } from 'react';
-import {
-  Link
-} from 'react-router';
 
 const propTypes = {
   actions: PropTypes.shape({
@@ -46,9 +43,14 @@ class SignIn extends Component {
 
       return memo;
     }, {});
+    const params = {
+      data: {
+        attributes: values
+      }
+    };
 
     return this.props.actions.authentication
-      .signIn(values)
+      .signIn(params)
       .then(() => this.transitionToNextPage());
   }
 
@@ -67,22 +69,19 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div>
-        <form ref={(form) => { this.signInForm = form; }} onSubmit={this.handleSubmit}>
-          <label htmlFor="email">
-            Email
-            <input name="email" type="text" />
-          </label>
-          <label htmlFor="password">
-            Password
-            <input name="password" type="password" />
-          </label>
-          {this.props.children &&
-            cloneElement(this.props.children, this.props)}
-          <input type="submit" value="Sign In" />
-        </form>
-        <Link to="/register">Register</Link>
-      </div>
+      <form ref={(form) => { this.signInForm = form; }} onSubmit={this.handleSubmit}>
+        <label htmlFor="email">
+          Email
+          <input name="email" type="text" />
+        </label>
+        <label htmlFor="password">
+          Password
+          <input name="password" type="password" />
+        </label>
+        {this.props.children &&
+          cloneElement(this.props.children, this.props)}
+        <input type="submit" className="c-button c-button--brand" value="Sign In" />
+      </form>
     );
   }
 }

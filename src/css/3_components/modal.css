@@ -1,0 +1,8 @@
+div.o-modal {
+  background-color: var(--color-off-white);
+  padding: var(--spacing-xs) var(--spacing-med);
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+}

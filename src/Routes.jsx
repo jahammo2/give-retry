@@ -8,9 +8,9 @@ import {
   Router
 } from 'react-router';
 import AppContainer from './containers/AppContainer';
-import Register from '../modules/authentication/containers/Register';
+import Register from './components/authentication/Register';
 import RegistrationConfirmed from '../modules/authentication/containers/RegistrationConfirmed';
-import SignIn from '../modules/authentication/containers/SignIn';
+import SignIn from './components/authentication/SignIn';
 import authenticationService from '../modules/authentication/services';
 
 const propTypes = {
